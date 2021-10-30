@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DDDDDD"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="#2B4380"
+        android:gravity="center"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/level_flag_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flag 1/10"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_question_view"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <ImageView
+            android:id="@+id/questionFlagImage"
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:src="@drawable/uzbekistan_tashkent_flag" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Select answer"
+                android:textColor="#2B4380"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/variant1"
+                style="@style/question_flag_variants_bg"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/variant3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/variant2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Variant 1" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/variant2"
+                style="@style/question_flag_variants_bg"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/variant4"
+                app:layout_constraintLeft_toRightOf="@id/variant1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Variant 2" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/variant3"
+                style="@style/question_flag_variants_bg"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/variant4"
+                app:layout_constraintTop_toBottomOf="@id/variant1"
+                tools:text="Variant 3" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/variant4"
+                style="@style/question_flag_variants_bg"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/variant3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/variant2"
+                tools:text="Variant 4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
